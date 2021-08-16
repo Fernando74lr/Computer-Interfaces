@@ -1,7 +1,7 @@
 // Workspace
 using System;
 
-class Excercise_1_2
+class ER_1_2
 {
     /* This program ask for the lastname */
     static void Main()

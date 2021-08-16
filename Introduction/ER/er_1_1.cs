@@ -1,7 +1,7 @@
 // Workspace
 using System;
 
-class Excercise_1_1
+class ER_1_1
 {
     /* This program print in console */
     static void Main()
