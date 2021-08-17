@@ -38,7 +38,7 @@ class Excercise_2_3
 	NOTAS.
 
 	- los enteros en C# son de 32 bits.
-    -Int32.Parse(Console.ReadLine()); // Transforma String a Int.
+    - Int32.Parse(Console.ReadLine()); // Transforma String a Int.
     - CAST: trata el valor como un formato diferente
 
 */
