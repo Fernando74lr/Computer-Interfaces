@@ -1,6 +1,6 @@
 using System;
 
-class ER_1_5
+class EP_1_5
 {
     static void Main()
     {

@@ -1,7 +1,7 @@
 
 using System;
 
-class Excercise_4_6
+class ER_4_6
 {
 	static void Main()
 	{
