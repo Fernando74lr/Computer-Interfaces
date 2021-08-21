@@ -24,7 +24,7 @@ class ER_5_8
         for (i=0; i < 4; i++)
         {
             for(j=0; j < 4; j++)
-                Console.WriteLine("{0,3}", matriz[i,j]); // ",3" --> spaces
+                Console.Write("{0,3}", matriz[i,j]); // ",3" --> spaces
             Console.WriteLine();
         }
 
@@ -32,7 +32,7 @@ class ER_5_8
         for (i=0; i < 4; i++)
         {
             for(j=0; j < 4; j++)
-                Console.WriteLine("{0,3}", rotar[i,j]);
+                Console.Write("{0,3}", rotar[i,j]);
             Console.WriteLine();
         }
         
