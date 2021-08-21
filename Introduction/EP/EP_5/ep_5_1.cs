@@ -1,7 +1,7 @@
 
 using System;
 
-class ER_5_1
+class EP_5_1
 {
     static void Main()
 	{
