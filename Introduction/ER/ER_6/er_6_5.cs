@@ -23,7 +23,7 @@ namespace  ER_6_5
             int num;
             
             do {
-                // Repite lecturra del número hasta
+                // Repite lectura del número hasta
                 // que sea mayor que 0.
                 Console.Write("Escriba un número entero mayor que cero: ");
                 num = int.Parse(Console.ReadLine());
