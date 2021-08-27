@@ -1,1 +1,8 @@
 *.exe
+.vs
+*bin
+*obj
+*Properties
+*.csproj
+*.sln
+*.config
