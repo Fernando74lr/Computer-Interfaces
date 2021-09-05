@@ -13,6 +13,8 @@ namespace ConversorDeTemperatura
     public partial class converterTemp : Form
     {
         private TextBox objTextBox = null;
+        private ErrorProvider ProveedorDeError = new ErrorProvider();
+        private double datoCajaTexto;
 
         public converterTemp()
         {
@@ -42,7 +44,7 @@ namespace ConversorDeTemperatura
                     ctGradosC.Text = string.Format("{0:F2}", grados);
                 }
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 ctGradosC.Text = "0.00";
                 ctGradosF.Text = "32.00";
@@ -66,6 +68,9 @@ namespace ConversorDeTemperatura
             objTextBox.SelectAll();
         }
 
+
+        // Primera forma de validación sin utilizar los métodos "Validating" y "Validated"
+        /*
         private void CajaTexto_KeyPress(object sender, KeyPressEventArgs e)
         {
             // Se pulsó la tecla "Enter", realiza operación.
@@ -117,6 +122,32 @@ namespace ConversorDeTemperatura
                 // Desechar los caracteres que no son dígitos.
                 e.Handled = true;
             }
+        }*/
+
+        // Segunda forma de validación utilizando los métodos "Validating" y "Validated"
+        private void CajaTexto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            objTextBox = (TextBox)sender;
+
+            // Se pulsó la tecla "Enter", realiza operación.
+            if (e.KeyChar == Convert.ToChar(13))
+            {
+                e.Handled = true;
+                // Cambiar el foco a otro control
+                if (objTextBox == ctGradosC)
+                {
+                    ctGradosF.Focus();
+                }
+                else
+                {
+                    ctGradosC.Focus();
+                }
+            }
+            // Se pulsó la tecla "ESC", cierra la aplicación.
+            else if (e.KeyChar == Convert.ToChar(Keys.Escape))
+            {
+                this.Close();
+            }
         }
 
         private void control_KeyUp(object sender, KeyEventArgs e)
@@ -136,6 +167,28 @@ namespace ConversorDeTemperatura
             {
                 // ...
             }
+        }
+
+        private void CajaTexto_Validating(object sender, CancelEventArgs e)
+        {
+            objTextBox = (TextBox)sender;
+
+            try
+            {
+                datoCajaTexto = Convert.ToDouble(objTextBox.Text);
+            }
+            catch (Exception)
+            {
+                e.Cancel = true;
+                objTextBox.SelectAll();
+                ProveedorDeError.SetError(objTextBox, "Tiene que ser numérico");
+            }
+        }
+
+        private void CajaTexto_Validated(object sender, EventArgs e)
+        {
+            ProveedorDeError.Clear();
+            Conversion(sender);
         }
     }
 }

@@ -65,6 +65,8 @@
             this.ctGradosC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.control_KeyDown);
             this.ctGradosC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CajaTexto_KeyPress);
             this.ctGradosC.KeyUp += new System.Windows.Forms.KeyEventHandler(this.control_KeyUp);
+            this.ctGradosC.Validating += new System.ComponentModel.CancelEventHandler(this.CajaTexto_Validating);
+            this.ctGradosC.Validated += new System.EventHandler(this.CajaTexto_Validated);
             // 
             // ctGradosF
             // 
@@ -77,6 +79,8 @@
             this.ctGradosF.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CajaTexto_MouseClick);
             this.ctGradosF.Enter += new System.EventHandler(this.CajaTexto_Enter);
             this.ctGradosF.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CajaTexto_KeyPress);
+            this.ctGradosF.Validating += new System.ComponentModel.CancelEventHandler(this.CajaTexto_Validating);
+            this.ctGradosF.Validated += new System.EventHandler(this.CajaTexto_Validated);
             // 
             // converterTemp
             // 
@@ -92,7 +96,6 @@
             this.MinimumSize = new System.Drawing.Size(320, 200);
             this.Name = "converterTemp";
             this.Text = "Conversor de temperaturas";
-            this.Load += new System.EventHandler(this.converterTemp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
