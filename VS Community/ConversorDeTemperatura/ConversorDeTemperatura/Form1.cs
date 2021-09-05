@@ -19,13 +19,9 @@ namespace ConversorDeTemperatura
             InitializeComponent();
         }
 
-        private void ctGradosF_KeyPress(object sender, EventArgs e)
+        private void Conversion(object sender)
         {
             objTextBox = (TextBox)sender;
-        }
-
-        private void btnConvertir_Click(object sender, EventArgs e)
-        {
             try
             {
                 double grados;
@@ -33,7 +29,7 @@ namespace ConversorDeTemperatura
                 if (objTextBox == ctGradosC)
                 {
                     grados = Convert.ToDouble(ctGradosC.Text) * 9.0 / 5.0 + 32.0;
-                    // Mostrar el resultado redondeado a dos decimales
+                    // Mostrar el resultado redondeado a dos decimales.
                     ctGradosF.Text = string.Format("{0:F2}", grados);
                 }
 
@@ -41,8 +37,8 @@ namespace ConversorDeTemperatura
                 if (objTextBox == ctGradosF)
                 {
                     grados = (Convert.ToDouble(ctGradosF.Text) - 32.0)*5.0 / 9.0;
-                    // Mostrar el resultado redondeado a dos decimales
-                    ctGradosC.Text = string.Format("{0:F2", grados);
+                    // Mostrar el resultado redondeado a dos decimales.
+                    ctGradosC.Text = string.Format("{0:F2}", grados);
                 }
             }
             catch(FormatException)
@@ -50,11 +46,6 @@ namespace ConversorDeTemperatura
                 ctGradosC.Text = "0.00";
                 ctGradosF.Text = "32.00";
             }
-        }
-
-        private void ctGradosC_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            objTextBox = (TextBox)sender;
         }
 
         private void converterTemp_Load(object sender, EventArgs e)
@@ -72,6 +63,22 @@ namespace ConversorDeTemperatura
         {
             objTextBox = (TextBox)sender;
             objTextBox.SelectAll();
+        }
+
+        private void CajaTexto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Se pulsó la tecla "Enter", realiza operación.
+            if (e.KeyChar == Convert.ToChar(13))
+            {
+                e.Handled = true;
+                Conversion(sender);
+            }
+
+            // Se pulsó la tecla "ESC", cierra la aplicación.
+            if (e.KeyChar  == Convert.ToChar(Keys.Escape))
+            {
+                this.Close();
+            }
         }
     }
 }
