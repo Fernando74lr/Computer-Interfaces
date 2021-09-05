@@ -62,7 +62,9 @@
             this.ctGradosC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.ctGradosC.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CajaTexto_MouseClick);
             this.ctGradosC.Enter += new System.EventHandler(this.CajaTexto_Enter);
+            this.ctGradosC.KeyDown += new System.Windows.Forms.KeyEventHandler(this.control_KeyDown);
             this.ctGradosC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CajaTexto_KeyPress);
+            this.ctGradosC.KeyUp += new System.Windows.Forms.KeyEventHandler(this.control_KeyUp);
             // 
             // ctGradosF
             // 

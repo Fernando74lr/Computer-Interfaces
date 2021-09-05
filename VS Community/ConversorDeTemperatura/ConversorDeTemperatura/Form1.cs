@@ -22,6 +22,7 @@ namespace ConversorDeTemperatura
         private void Conversion(object sender)
         {
             objTextBox = (TextBox)sender;
+
             try
             {
                 double grados;
@@ -73,11 +74,67 @@ namespace ConversorDeTemperatura
                 e.Handled = true;
                 Conversion(sender);
             }
-
             // Se pulsó la tecla "ESC", cierra la aplicación.
-            if (e.KeyChar  == Convert.ToChar(Keys.Escape))
+            else if(e.KeyChar  == Convert.ToChar(Keys.Escape))
             {
                 this.Close();
+            }
+            // Se pulsó la tecla "Retroceso".
+            else if(e.KeyChar == Convert.ToChar(8))
+            {
+                e.Handled = false;
+            }
+            // Se presionó la tecla "Coma".
+            else if(e.KeyChar == ',')
+            {
+                objTextBox = (TextBox)sender;
+                if (objTextBox.Text.IndexOf(',') != -1)
+                {
+                    // Sólo puede haber una coma.
+                    e.Handled = true;
+                }
+            }
+            // Se presionó la tecla '-' o '+'.
+            else if(e.KeyChar == '-' || e.KeyChar == '+')
+            {
+                objTextBox = (TextBox)sender;
+
+                // Admitir '-' o '+' sólo en la primera posición.
+                if (objTextBox.SelectionLength == objTextBox.TextLength)
+                {
+                    // Todo el texto está seleccionado: se sobreescribe con el signo.
+                    e.Handled = false;
+                }
+                else if (objTextBox.TextLength != 0)
+                {
+                    // La primera posición ya está ocupada.
+                    e.Handled = true;
+                }
+            }
+            // Se presionó un caractér del '0' al '9'.
+            else if(e.KeyChar < '0' || e.KeyChar > '9')
+            {
+                // Desechar los caracteres que no son dígitos.
+                e.Handled = true;
+            }
+        }
+
+        private void control_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void control_KeyDown(object sender, KeyEventArgs e)
+        {
+            // Si se pulsó (Alt | Ctrl | Shift) + F1...
+            if (e.KeyCode == Keys.F1 && (e.Alt || e.Control || e.Shift))
+            {
+                // ...
+            }
+            // Si se pulsó Alt + F2...
+            else if (e.KeyCode == Keys.F2 && e.Modifiers == Keys.Alt)
+            {
+                // ...
             }
         }
     }
