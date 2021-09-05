@@ -56,5 +56,22 @@ namespace ConversorDeTemperatura
         {
             objTextBox = (TextBox)sender;
         }
+
+        private void converterTemp_Load(object sender, EventArgs e)
+        {
+            ctGradosC.Select();
+        }
+
+        private void CajaTexto_Enter(object sender, EventArgs e)
+        {
+            objTextBox = (TextBox)sender;
+            objTextBox.SelectAll();
+        }
+
+        private void CajaTexto_MouseClick(object sender, MouseEventArgs e)
+        {
+            objTextBox = (TextBox)sender;
+            objTextBox.SelectAll();
+        }
     }
 }

@@ -41,7 +41,7 @@
             this.etGradosC.Location = new System.Drawing.Point(12, 33);
             this.etGradosC.Name = "etGradosC";
             this.etGradosC.Size = new System.Drawing.Size(104, 13);
-            this.etGradosC.TabIndex = 1;
+            this.etGradosC.TabIndex = 3;
             this.etGradosC.Text = "Grados centígrados:";
             // 
             // etGradosF
@@ -50,7 +50,7 @@
             this.etGradosF.Location = new System.Drawing.Point(12, 76);
             this.etGradosF.Name = "etGradosF";
             this.etGradosF.Size = new System.Drawing.Size(97, 13);
-            this.etGradosF.TabIndex = 2;
+            this.etGradosF.TabIndex = 4;
             this.etGradosF.Text = "Grados Fahrenheit:";
             // 
             // ctGradosC
@@ -58,20 +58,23 @@
             this.ctGradosC.Location = new System.Drawing.Point(122, 30);
             this.ctGradosC.Name = "ctGradosC";
             this.ctGradosC.Size = new System.Drawing.Size(170, 20);
-            this.ctGradosC.TabIndex = 3;
+            this.ctGradosC.TabIndex = 0;
             this.ctGradosC.Text = "0.0";
             this.ctGradosC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ctGradosC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ctGradosC_KeyPress);
+            this.ctGradosC.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CajaTexto_MouseClick);
+            this.ctGradosC.Enter += new System.EventHandler(this.CajaTexto_Enter);
+            this.ctGradosC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ctGradosF_KeyPress);
             // 
             // ctGradosF
             // 
             this.ctGradosF.Location = new System.Drawing.Point(122, 73);
             this.ctGradosF.Name = "ctGradosF";
             this.ctGradosF.Size = new System.Drawing.Size(170, 20);
-            this.ctGradosF.TabIndex = 4;
+            this.ctGradosF.TabIndex = 1;
             this.ctGradosF.Text = "32.0";
             this.ctGradosF.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.ctGradosC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ctGradosF_KeyPress);
+            this.ctGradosF.MouseClick += new System.Windows.Forms.MouseEventHandler(this.CajaTexto_MouseClick);
+            this.ctGradosF.Enter += new System.EventHandler(this.CajaTexto_Enter);
             // 
             // btnConvertir
             // 
@@ -79,7 +82,7 @@
             this.btnConvertir.Location = new System.Drawing.Point(122, 113);
             this.btnConvertir.Name = "btnConvertir";
             this.btnConvertir.Size = new System.Drawing.Size(170, 23);
-            this.btnConvertir.TabIndex = 5;
+            this.btnConvertir.TabIndex = 2;
             this.btnConvertir.Text = "&Convertir";
             this.btnConvertir.UseVisualStyleBackColor = true;
             this.btnConvertir.UseWaitCursor = true;
@@ -101,6 +104,7 @@
             this.MinimumSize = new System.Drawing.Size(320, 200);
             this.Name = "converterTemp";
             this.Text = "Conversor de temperaturas";
+            this.Load += new System.EventHandler(this.converterTemp_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
