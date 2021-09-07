@@ -35,7 +35,7 @@ namespace CasillaDeVerificación
 
         private void ctTexto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (cvConverMayus.CheckState == CheckState.Unchecked)
+            /*if (cvConverMayus.CheckState == CheckState.Unchecked)
             {
                 if (char.IsUpper(e.KeyChar))
                 {
@@ -48,13 +48,14 @@ namespace CasillaDeVerificación
                 {
                     e.KeyChar = char.ToUpper(e.KeyChar);
                 }
-            }
+            }*/
         }
 
         private void cvConverMayus_Click(object sender, EventArgs e)
         {
-            ctTexto.Focus();
+            /*ctTexto.Focus();
             ctTexto.SelectionStart = ctTexto.Text.Length;
+            */
         }
     }
 }
