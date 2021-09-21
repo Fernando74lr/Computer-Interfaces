@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.spSerialPort = new System.IO.Ports.SerialPort(this.components);
             this.cboBaudrate = new System.Windows.Forms.ComboBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnSearchPorts
@@ -120,11 +121,24 @@
             this.cboBaudrate.Size = new System.Drawing.Size(121, 21);
             this.cboBaudrate.TabIndex = 8;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.checkBox1.Location = new System.Drawing.Point(359, 90);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(32, 17);
+            this.checkBox1.TabIndex = 9;
+            this.checkBox1.Text = "0";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 278);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.cboBaudrate);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboPorts);
@@ -153,6 +167,7 @@
         private System.Windows.Forms.Label label1;
         private System.IO.Ports.SerialPort spSerialPort;
         private System.Windows.Forms.ComboBox cboBaudrate;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
