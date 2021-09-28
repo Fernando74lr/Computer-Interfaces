@@ -181,6 +181,7 @@ namespace PartialProject1
             this.cbDigitalData3.Text = "&3";
             this.cbDigitalData3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cbDigitalData3.UseVisualStyleBackColor = true;
+            this.cbDigitalData3.CheckedChanged += new System.EventHandler(this.cbDigitalData3_CheckedChanged);
             // 
             // cbDigitalData2
             // 

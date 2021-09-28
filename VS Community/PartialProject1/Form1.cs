@@ -357,5 +357,10 @@ namespace PartialProject1
                 tmrCount++;
             }
         }
+
+        private void cbDigitalData3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
