@@ -39,6 +39,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.spSerialPort = new System.IO.Ports.SerialPort(this.components);
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.progressBar4 = new System.Windows.Forms.ProgressBar();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lbValueByte1 = new System.Windows.Forms.Label();
+            this.lbValueByte2 = new System.Windows.Forms.Label();
+            this.lbValueByte4 = new System.Windows.Forms.Label();
+            this.lbValueByte3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // tbPort
@@ -131,12 +143,129 @@
             // 
             this.spSerialPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.spSerialPort_DataReceived);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(289, 35);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(138, 23);
+            this.progressBar1.TabIndex = 9;
+            // 
+            // progressBar3
+            // 
+            this.progressBar3.Location = new System.Drawing.Point(289, 145);
+            this.progressBar3.Name = "progressBar3";
+            this.progressBar3.Size = new System.Drawing.Size(138, 23);
+            this.progressBar3.TabIndex = 10;
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(289, 90);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(138, 23);
+            this.progressBar2.TabIndex = 11;
+            // 
+            // progressBar4
+            // 
+            this.progressBar4.Location = new System.Drawing.Point(289, 202);
+            this.progressBar4.Name = "progressBar4";
+            this.progressBar4.Size = new System.Drawing.Size(138, 23);
+            this.progressBar4.TabIndex = 12;
+            this.progressBar4.Tag = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(289, 16);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Byte 1";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(289, 74);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(37, 13);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Byte 2";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(289, 130);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(37, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Byte 3";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(289, 186);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Byte 4";
+            // 
+            // lbValueByte1
+            // 
+            this.lbValueByte1.AutoSize = true;
+            this.lbValueByte1.BackColor = System.Drawing.Color.Transparent;
+            this.lbValueByte1.Location = new System.Drawing.Point(350, 40);
+            this.lbValueByte1.Name = "lbValueByte1";
+            this.lbValueByte1.Size = new System.Drawing.Size(13, 13);
+            this.lbValueByte1.TabIndex = 17;
+            this.lbValueByte1.Text = "0";
+            // 
+            // lbValueByte2
+            // 
+            this.lbValueByte2.AutoSize = true;
+            this.lbValueByte2.BackColor = System.Drawing.Color.Transparent;
+            this.lbValueByte2.Location = new System.Drawing.Point(350, 95);
+            this.lbValueByte2.Name = "lbValueByte2";
+            this.lbValueByte2.Size = new System.Drawing.Size(13, 13);
+            this.lbValueByte2.TabIndex = 18;
+            this.lbValueByte2.Text = "0";
+            // 
+            // lbValueByte4
+            // 
+            this.lbValueByte4.AutoSize = true;
+            this.lbValueByte4.BackColor = System.Drawing.Color.Transparent;
+            this.lbValueByte4.Location = new System.Drawing.Point(350, 207);
+            this.lbValueByte4.Name = "lbValueByte4";
+            this.lbValueByte4.Size = new System.Drawing.Size(13, 13);
+            this.lbValueByte4.TabIndex = 20;
+            this.lbValueByte4.Text = "0";
+            // 
+            // lbValueByte3
+            // 
+            this.lbValueByte3.AutoSize = true;
+            this.lbValueByte3.BackColor = System.Drawing.Color.Transparent;
+            this.lbValueByte3.Location = new System.Drawing.Point(350, 149);
+            this.lbValueByte3.Name = "lbValueByte3";
+            this.lbValueByte3.Size = new System.Drawing.Size(13, 13);
+            this.lbValueByte3.TabIndex = 19;
+            this.lbValueByte3.Text = "0";
+            // 
             // Form1
             // 
             this.AcceptButton = this.btnSend;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(260, 237);
+            this.ClientSize = new System.Drawing.Size(439, 237);
+            this.Controls.Add(this.lbValueByte4);
+            this.Controls.Add(this.lbValueByte3);
+            this.Controls.Add(this.lbValueByte2);
+            this.Controls.Add(this.lbValueByte1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.progressBar4);
+            this.Controls.Add(this.progressBar2);
+            this.Controls.Add(this.progressBar3);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -168,6 +297,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.IO.Ports.SerialPort spSerialPort;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar3;
+        private System.Windows.Forms.ProgressBar progressBar2;
+        private System.Windows.Forms.ProgressBar progressBar4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lbValueByte1;
+        private System.Windows.Forms.Label lbValueByte2;
+        private System.Windows.Forms.Label lbValueByte4;
+        private System.Windows.Forms.Label lbValueByte3;
     }
 }
 

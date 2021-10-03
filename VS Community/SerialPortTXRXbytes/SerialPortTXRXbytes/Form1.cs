@@ -66,6 +66,18 @@ namespace SerialPortTXRXbytes
             {
                 tbReceivedValue.Text = Convert.ToString(byteFrame[i]);
             }
+
+            // Update Progress Bar
+            progressBar1.Value = int.Parse(Convert.ToString(byteFrame[0]));
+            progressBar2.Value = int.Parse(Convert.ToString(byteFrame[1]));
+            progressBar3.Value = int.Parse(Convert.ToString(byteFrame[2]));
+            progressBar4.Value = int.Parse(Convert.ToString(byteFrame[3]));
+
+            // Label Progress Bar
+            lbValueByte1.Text = Convert.ToString(byteFrame[0]);
+            lbValueByte2.Text = Convert.ToString(byteFrame[1]);
+            lbValueByte3.Text = Convert.ToString(byteFrame[2]);
+            lbValueByte4.Text = Convert.ToString(byteFrame[3]);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -78,5 +90,6 @@ namespace SerialPortTXRXbytes
         {
             spSerialPort.Close();
         }
+
     }
 }
