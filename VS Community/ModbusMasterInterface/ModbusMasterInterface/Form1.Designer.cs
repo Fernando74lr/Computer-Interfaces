@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.lblInputStatus = new System.Windows.Forms.Label();
             this.btnReadInput = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.lblInputRegister = new System.Windows.Forms.Label();
             this.btnReadRegister = new System.Windows.Forms.Button();
+            this.btnWriteSingleCoil = new System.Windows.Forms.Button();
+            this.Sin = new System.Windows.Forms.Label();
+            this.tbCoilValue = new System.Windows.Forms.TextBox();
+            this.tbRegisterValue = new System.Windows.Forms.TextBox();
+            this.btnWriteSingleRegister = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -92,11 +100,77 @@
             this.btnReadRegister.UseVisualStyleBackColor = true;
             this.btnReadRegister.Click += new System.EventHandler(this.btnReadRegister_Click);
             // 
+            // btnWriteSingleCoil
+            // 
+            this.btnWriteSingleCoil.Location = new System.Drawing.Point(313, 180);
+            this.btnWriteSingleCoil.Name = "btnWriteSingleCoil";
+            this.btnWriteSingleCoil.Size = new System.Drawing.Size(134, 23);
+            this.btnWriteSingleCoil.TabIndex = 8;
+            this.btnWriteSingleCoil.Text = "Write Single Coil";
+            this.btnWriteSingleCoil.UseVisualStyleBackColor = true;
+            this.btnWriteSingleCoil.Click += new System.EventHandler(this.btnWriteSingleCoil_Click);
+            // 
+            // Sin
+            // 
+            this.Sin.AutoSize = true;
+            this.Sin.Location = new System.Drawing.Point(60, 185);
+            this.Sin.Name = "Sin";
+            this.Sin.Size = new System.Drawing.Size(59, 13);
+            this.Sin.TabIndex = 6;
+            this.Sin.Text = "Single Coil:";
+            // 
+            // tbCoilValue
+            // 
+            this.tbCoilValue.Location = new System.Drawing.Point(158, 180);
+            this.tbCoilValue.Name = "tbCoilValue";
+            this.tbCoilValue.Size = new System.Drawing.Size(100, 20);
+            this.tbCoilValue.TabIndex = 9;
+            this.tbCoilValue.Text = "OFF";
+            // 
+            // tbRegisterValue
+            // 
+            this.tbRegisterValue.Location = new System.Drawing.Point(158, 242);
+            this.tbRegisterValue.Name = "tbRegisterValue";
+            this.tbRegisterValue.Size = new System.Drawing.Size(100, 20);
+            this.tbRegisterValue.TabIndex = 12;
+            this.tbRegisterValue.Text = "0";
+            // 
+            // btnWriteSingleRegister
+            // 
+            this.btnWriteSingleRegister.Location = new System.Drawing.Point(313, 242);
+            this.btnWriteSingleRegister.Name = "btnWriteSingleRegister";
+            this.btnWriteSingleRegister.Size = new System.Drawing.Size(134, 23);
+            this.btnWriteSingleRegister.TabIndex = 11;
+            this.btnWriteSingleRegister.Text = "Write Single Register";
+            this.btnWriteSingleRegister.UseVisualStyleBackColor = true;
+            this.btnWriteSingleRegister.Click += new System.EventHandler(this.btnWriteSingleRegister_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(60, 247);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Single Coil:";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 2000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(494, 364);
+            this.Controls.Add(this.tbRegisterValue);
+            this.Controls.Add(this.btnWriteSingleRegister);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.tbCoilValue);
+            this.Controls.Add(this.btnWriteSingleCoil);
+            this.Controls.Add(this.Sin);
             this.Controls.Add(this.btnReadRegister);
             this.Controls.Add(this.lblInputRegister);
             this.Controls.Add(this.label2);
@@ -118,6 +192,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblInputRegister;
         private System.Windows.Forms.Button btnReadRegister;
+        private System.Windows.Forms.Button btnWriteSingleCoil;
+        private System.Windows.Forms.Label Sin;
+        private System.Windows.Forms.TextBox tbCoilValue;
+        private System.Windows.Forms.TextBox tbRegisterValue;
+        private System.Windows.Forms.Button btnWriteSingleRegister;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
